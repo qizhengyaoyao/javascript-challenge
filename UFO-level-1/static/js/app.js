@@ -5,6 +5,7 @@ var tableData = data;
 // console.log(tableData);
 var tbody = d3.select("tbody");
 
+// Default: print all the data
 function addUFOdata(UFOdata) {
   var row = tbody.append("tr");
 
@@ -34,6 +35,7 @@ function runEnter() {
   
     // console.log(inputValue);
   
+    // Filter the data depending on input conditions
     var filteredData = tableData;
     if (inputValue != ""){
       filteredData = tableData.filter(tableData => tableData.datetime == inputValue);

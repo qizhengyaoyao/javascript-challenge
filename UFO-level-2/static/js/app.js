@@ -21,12 +21,6 @@ var button = d3.select("#filter-btn");
 
 button.on("click", runEnter);
 
-// var inputDate = d3.select("#datetime").property("value");
-// var inputCity = d3.select("#city").property("value");
-// var inputState = d3.select("#state").property("value");
-// var inputCountry = d3.select("#country").property("value");
-// var inputShape = d3.select("#shape").property("value");
-
 function runEnter() {
 
     // Prevent the page from refreshing
@@ -42,8 +36,9 @@ function runEnter() {
     // Get the value property of the input element
     // var inputValue = inputDate.property("value");
   
-    console.log(inputDate);
+    // console.log(inputDate);
   
+    // Get the filtered data depending on the input conditions
     var filteredData = tableData;
     filteredData = tableData.filter(function filterEnter(data){
       var returnvalue = true;
@@ -53,9 +48,14 @@ function runEnter() {
       if (inputCity!="") {
         returnvalue = returnvalue && (data.city == inputCity)
        };
-
-       if (inputCity!="") {
-        returnvalue = returnvalue && (data.city == inputCity)
+      if (inputState!="") {
+        returnvalue = returnvalue && (data.state == inputState)
+       };
+      if (inputCountry!="") {
+        returnvalue = returnvalue && (data.country == inputCountry)
+       };
+      if (inputShape!="") {
+        returnvalue = returnvalue && (data.shape == inputShape)
        };
 
       return returnvalue;
