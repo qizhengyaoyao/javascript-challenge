@@ -42,8 +42,6 @@ function runEnter() {
     // console.log(filteredData);
     tbody.html("");
 
-    filteredData.forEach(addUFOdata);
-
     if(filteredData.length !== 0) {
         filteredData.forEach(addUFOdata);
     }
