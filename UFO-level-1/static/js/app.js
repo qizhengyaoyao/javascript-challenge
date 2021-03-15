@@ -34,10 +34,12 @@ function runEnter() {
   
     // console.log(inputValue);
   
-    var filteredData = tableData.filter(tableData => tableData.datetime == inputValue);
-  
-    // console.log(filteredData);
+    var filteredData = tableData;
+    if (inputValue != ""){
+      filteredData = tableData.filter(tableData => tableData.datetime == inputValue);
+    };
 
+    // console.log(filteredData);
     tbody.html("");
 
     filteredData.forEach(addUFOdata);
@@ -50,6 +52,4 @@ function runEnter() {
         cell.text("No Data matches the input value.");
         cell.attr("colspan", "7");
     }
-    
-        
   };
